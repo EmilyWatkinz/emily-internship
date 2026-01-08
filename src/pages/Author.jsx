@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AuthorBanner from "../images/author_banner.jpg";
 import AuthorItems from "../components/author/AuthorItems";
-import { Link } from "react-router-dom";
-import AuthorImage from "../images/author_thumbnail.jpg";
+import { Link, useParams } from "react-router-dom";
 
 const Author = () => {
+  const { id } = useParams();
+  const [author, setAuthor] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchAuthor = async () => {
+      if (id) {
+        try {
+          const response = await fetch(
+            `https://us-central1-nft-cloud-functions.cloudfunctions.net/authors?author=${id}`
+          );
+          const data = await response.json();
+          console.log("Author data:", data);
+          setAuthor(data);
+          setLoading(false);
+        } catch (error) {
+          console.error("Error fetching author:", error);
+          setLoading(false);
+        }
+      } else {
+        setLoading(false);
+      }
+    };
+
+    fetchAuthor();
+  }, [id]);
+
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -15,7 +41,7 @@ const Author = () => {
           aria-label="section"
           className="text-light"
           data-bgimage="url(images/author_banner.jpg) top"
-          style={{ background: `url(${AuthorBanner}) top` }}
+          style={{ background: `url(${author?.nftImage || author?.authorBanner || AuthorBanner}) top`, backgroundSize: 'cover' }}
         ></section>
 
         <section aria-label="section">
@@ -25,15 +51,51 @@ const Author = () => {
                 <div className="d_profile de-flex">
                   <div className="de-flex-col">
                     <div className="profile_avatar">
-                      <img src={AuthorImage} alt="" />
+                      {loading ? (
+                        <div
+                          style={{
+                            width: "150px",
+                            height: "150px",
+                            backgroundColor: "#e0e0e0",
+                            borderRadius: "50%",
+                          }}
+                        ></div>
+                      ) : (
+                        <img src={author?.authorImage} alt="" />
+                      )}
 
                       <i className="fa fa-check"></i>
                       <div className="profile_name">
                         <h4>
-                          Monica Lucas
-                          <span className="profile_username">@monicaaaa</span>
+                          {loading ? (
+                            <div
+                              style={{
+                                height: "24px",
+                                width: "150px",
+                                backgroundColor: "#e0e0e0",
+                                borderRadius: "4px",
+                                marginBottom: "10px",
+                              }}
+                            ></div>
+                          ) : (
+                            author?.authorName || "Author Name"
+                          )}
+                          <span className="profile_username">
+                            {loading ? "" : `@${author?.tag || "username"}`}
+                          </span>
                           <span id="wallet" className="profile_wallet">
-                            UDHUHWudhwd78wdt7edb32uidbwyuidhg7wUHIFUHWewiqdj87dy7
+                            {loading ? (
+                              <div
+                                style={{
+                                  height: "16px",
+                                  width: "300px",
+                                  backgroundColor: "#e0e0e0",
+                                  borderRadius: "4px",
+                                }}
+                              ></div>
+                            ) : (
+                              author?.address || "No address available"
+                            )}
                           </span>
                           <button id="btn_copy" title="Copy Text">
                             Copy
@@ -44,7 +106,20 @@ const Author = () => {
                   </div>
                   <div className="profile_follow de-flex">
                     <div className="de-flex-col">
-                      <div className="profile_follower">573 followers</div>
+                      <div className="profile_follower">
+                        {loading ? (
+                          <div
+                            style={{
+                              height: "20px",
+                              width: "100px",
+                              backgroundColor: "#e0e0e0",
+                              borderRadius: "4px",
+                            }}
+                          ></div>
+                        ) : (
+                          `${author?.followers || 0} followers`
+                        )}
+                      </div>
                       <Link to="#" className="btn-main">
                         Follow
                       </Link>
@@ -55,7 +130,7 @@ const Author = () => {
 
               <div className="col-md-12">
                 <div className="de_tab tab_simple">
-                  <AuthorItems />
+                  <AuthorItems authorId={id} />
                 </div>
               </div>
             </div>
