@@ -135,8 +135,8 @@ const ItemDetails = () => {
                     <div className="spacer-40"></div>
                     <h6>Price</h6>
                     <div className="nft-item-price">
-                      <img src={EthImage} alt="" />
-                      <span>{item.price || "N/A"}</span>
+                      <img src={EthImage} alt="Ethereum" style={{ width: "16px", height: "16px", marginRight: "8px" }} />
+                      <span>{item.price || "N/A"} ETH</span>
                     </div>
                   </div>
                 </div>
