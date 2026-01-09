@@ -5,6 +5,7 @@ const ScrollReveal = ({ children, className = "" }) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
+    const element = elementRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -17,13 +18,13 @@ const ScrollReveal = ({ children, className = "" }) => {
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, []);
