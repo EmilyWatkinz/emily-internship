@@ -8,6 +8,8 @@ const Author = () => {
   const { id } = useParams();
   const [author, setAuthor] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [followerCount, setFollowerCount] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,6 +21,7 @@ const Author = () => {
         );
         const data = await response.json();
         setAuthor(data);
+        setFollowerCount(data.followers || 0);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching author data:", error);
@@ -30,6 +33,16 @@ const Author = () => {
       fetchAuthorData();
     }
   }, [id]);
+
+  const handleFollow = () => {
+    if (isFollowing) {
+      setFollowerCount(followerCount - 1);
+      setIsFollowing(false);
+    } else {
+      setFollowerCount(followerCount + 1);
+      setIsFollowing(true);
+    }
+  };
 
   if (loading) {
     return (
@@ -107,10 +120,10 @@ const Author = () => {
                   </div>
                   <div className="profile_follow de-flex">
                     <div className="de-flex-col">
-                      <div className="profile_follower">{author.followers} followers</div>
-                      <Link to="#" className="btn-main">
-                        Follow
-                      </Link>
+                      <div className="profile_follower">{followerCount} followers</div>
+                      <button onClick={handleFollow} className="btn-main">
+                        {isFollowing ? "Unfollow" : "Follow"}
+                      </button>
                     </div>
                   </div>
                 </div>
