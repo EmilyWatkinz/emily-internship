@@ -64,9 +64,7 @@
   transform: translateX(-30px);
 }
 
-/* Responsive Styles for Mobile and Tablet */
 @media (max-width: 991px) {
-  /* Landing section adjustments */
   #section-hero .container {
     padding: 20px 15px;
   }
@@ -80,12 +78,10 @@
     font-size: 1rem !important;
   }
 
-  /* NFT items grid - 2 columns on tablets */
   .nft__item {
     margin-bottom: 30px;
   }
 
-  /* Slick carousel arrows - move inside on tablets */
   #section-items .slick-prev {
     left: -25px !important;
     z-index: 10 !important;
@@ -96,7 +92,6 @@
     z-index: 10 !important;
   }
 
-  /* Ensure consistent card heights */
   .nft__item {
     display: flex !important;
     flex-direction: column !important;
@@ -121,12 +116,10 @@
     flex: 1 !important;
   }
 
-  /* Hide hover buttons overlay on tablets and mobile */
   .nft__item_extra {
     display: none !important;
   }
 
-  /* Author profile adjustments */
   .d_profile {
     flex-direction: column !important;
     align-items: center !important;
@@ -139,7 +132,6 @@
     justify-content: center !important;
   }
 
-  /* Item details page */
   .item_info h2 {
     font-size: 1.75rem !important;
   }
@@ -148,7 +140,6 @@
     margin-bottom: 30px !important;
   }
 
-  /* Spacing adjustments */
   .spacer-double,
   .spacer-single {
     height: 30px !important;
@@ -156,17 +147,14 @@
 }
 
 @media (max-width: 767px) {
-  /* Mobile-specific adjustments */
   body {
     font-size: 14px;
   }
 
-  /* Navigation */
   .navbar-brand img {
     max-width: 120px;
   }
 
-  /* Hero section */
   #section-hero {
     padding: 60px 0 !important;
   }
@@ -179,7 +167,6 @@
     height: 20px !important;
   }
 
-  /* Section headings */
   h2 {
     font-size: 1.75rem !important;
   }
@@ -192,12 +179,10 @@
     font-size: 1.25rem !important;
   }
 
-  /* NFT items - single column on mobile */
   .nft__item {
     margin-bottom: 25px;
   }
 
-  /* Make New Items cards wider and shorter on mobile */
   #section-items .nft__item_wrap {
     height: 220px !important;
     width: 100% !important;
@@ -208,33 +193,27 @@
     width: 100% !important;
   }
 
-  /* Keep buttons hidden on mobile */
   .nft__item_extra {
     display: none !important;
   }
 
-  /* Add padding to carousel container to accommodate arrows */
   #section-items .slick-slider {
     padding: 0 20px;
   }
 
-  /* Hot Collections */
   #section-collections .slick-slider {
     padding: 0 30px;
   }
 
-  /* Browse by category */
   .browse-category-item {
     margin-bottom: 20px;
   }
 
-  /* Explore page filters */
   .items_filter select {
     width: 100% !important;
     margin-bottom: 15px;
   }
 
-  /* Author profile */
   .profile_avatar img {
     width: 100px !important;
     height: 100px !important;
@@ -249,7 +228,6 @@
     word-break: break-all;
   }
 
-  /* Item details */
   .item_info_counts {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -267,19 +245,16 @@
     font-size: 1.25rem !important;
   }
 
-  /* Buttons */
   .btn-main {
     padding: 10px 20px !important;
     font-size: 14px !important;
   }
 
-  /* Footer */
   footer .col-md-3,
   footer .col-md-4 {
     margin-bottom: 30px;
   }
 
-  /* Center footer sections on small screens */
   footer .widget {
     text-align: center;
   }
@@ -292,7 +267,6 @@
     text-align: center;
   }
 
-  /* Padding adjustments */
   .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -302,7 +276,6 @@
     padding: 40px 0 !important;
   }
 
-  /* Remove excessive spacing on mobile */
   .spacer-double {
     height: 20px !important;
   }
@@ -311,14 +284,12 @@
     height: 10px !important;
   }
 
-  /* Fix text overflow */
   .author_list_info a {
     word-break: break-word;
   }
 }
 
 @media (max-width: 480px) {
-  /* Extra small mobile devices */
   #section-hero h1 {
     font-size: 1.25rem !important;
   }
@@ -327,7 +298,6 @@
     font-size: 1.5rem !important;
   }
 
-  /* Carousel adjustments for very small screens */
   .slick-prev,
   .slick-next {
     width: 35px !important;
@@ -339,12 +309,10 @@
     font-size: 12px !important;
   }
 
-  /* Compact item cards */
   .nft__item {
     margin-bottom: 20px;
   }
 
-  /* Make New Items cards even wider and shorter on small mobile */
   #section-items .nft__item_wrap {
     height: 200px !important;
   }
@@ -357,7 +325,6 @@
     font-size: 0.9rem !important;
   }
 
-  /* Author items */
   .author_list_pp {
     width: 35px !important;
     height: 35px !important;
@@ -368,19 +335,16 @@
     height: 35px !important;
   }
 
-  /* Profile adjustments */
   .profile_avatar img {
     width: 80px !important;
     height: 80px !important;
   }
 
-  /* Button sizing */
   .btn-main {
     padding: 8px 16px !important;
     font-size: 13px !important;
   }
 
-  /* Item details price */
   .nft-item-price img {
     width: 14px !important;
     height: 14px !important;
