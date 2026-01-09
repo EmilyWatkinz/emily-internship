@@ -280,7 +280,7 @@ const NewItems = () => {
                           if (!e.target.closest('.author_list_pp') && 
                               !e.target.closest('.nft__item_buttons') &&
                               !e.target.closest('.nft__item_share')) {
-                            navigate('/item-details');
+                            navigate(`/item-details/${item.nftId}`);
                           }
                         }}
                       >
@@ -317,7 +317,7 @@ const NewItems = () => {
                             </div>
                           </div>
 
-                          <Link to="/item-details">
+                          <Link to={`/item-details/${item.nftId}`}>
                             <img
                               src={item.nftImage}
                               className="lazy nft__item_preview"
@@ -326,7 +326,7 @@ const NewItems = () => {
                           </Link>
                         </div>
                         <div className="nft__item_info">
-                          <Link to="/item-details">
+                          <Link to={`/item-details/${item.nftId}`}>
                             <h4>{item.title}</h4>
                           </Link>
                           <div className="nft__item_price">{item.price} ETH</div>
