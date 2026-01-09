@@ -85,15 +85,45 @@
     margin-bottom: 30px;
   }
 
-  /* Slick carousel arrows */
-  .slick-prev {
-    left: 10px !important;
+  /* Slick carousel arrows - move inside on tablets */
+  #section-items .slick-prev {
+    left: -25px !important;
     z-index: 10 !important;
   }
 
-  .slick-next {
-    right: 10px !important;
+  #section-items .slick-next {
+    right: -25px !important;
     z-index: 10 !important;
+  }
+
+  /* Ensure consistent card heights */
+  .nft__item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+
+  .nft__item_wrap {
+    height: 350px !important;
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .nft__item_wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .nft__item_info {
+    flex: 1 !important;
+  }
+
+  /* Hide hover buttons overlay on tablets and mobile */
+  .nft__item_extra {
+    display: none !important;
   }
 
   /* Author profile adjustments */
@@ -167,8 +197,25 @@
     margin-bottom: 25px;
   }
 
-  .nft__item_wrap {
-    height: auto !important;
+  /* Make New Items cards wider and shorter on mobile */
+  #section-items .nft__item_wrap {
+    height: 220px !important;
+    width: 100% !important;
+  }
+
+  #section-items .nft__item_wrap img {
+    object-fit: cover !important;
+    width: 100% !important;
+  }
+
+  /* Keep buttons hidden on mobile */
+  .nft__item_extra {
+    display: none !important;
+  }
+
+  /* Add padding to carousel container to accommodate arrows */
+  #section-items .slick-slider {
+    padding: 0 20px;
   }
 
   /* Hot Collections */
@@ -232,6 +279,19 @@
     margin-bottom: 30px;
   }
 
+  /* Center footer sections on small screens */
+  footer .widget {
+    text-align: center;
+  }
+
+  footer .widget ul {
+    padding-left: 0;
+  }
+
+  footer .widget h5 {
+    text-align: center;
+  }
+
   /* Padding adjustments */
   .container {
     padding-left: 15px;
@@ -282,6 +342,11 @@
   /* Compact item cards */
   .nft__item {
     margin-bottom: 20px;
+  }
+
+  /* Make New Items cards even wider and shorter on small mobile */
+  #section-items .nft__item_wrap {
+    height: 200px !important;
   }
 
   .nft__item_info h4 {
