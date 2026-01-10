@@ -163,12 +163,12 @@ const HotCollections = () => {
             </div>
           </div>
           <div className="col-lg-12">
-            <div style={{ padding: "0 5px" }}>
+            <div style={{ padding: "0" }}>
             {loading ? (
               <Slider {...settings}>
                 {new Array(6).fill(0).map((_, index) => (
                   <div key={index}>
-                    <div className="nft_coll" style={{ margin: "0 10px" }}>
+                    <div className="nft_coll">
                       <div className="nft_wrap">
                         <div 
                           style={{ 
@@ -229,7 +229,7 @@ const HotCollections = () => {
                 <Slider {...settings}>
                   {collections.map((collection) => (
                     <div key={collection.id}>
-                      <div className="nft_coll" style={{ margin: "0 10px" }}>
+                      <div className="nft_coll">
                         <div className="nft_wrap">
                           <Link to={`/item-details/${collection.nftId}`}>
                             <img src={collection.nftImage} className="lazy img-fluid" alt={collection.title} />

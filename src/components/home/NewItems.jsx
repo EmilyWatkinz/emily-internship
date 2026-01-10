@@ -188,12 +188,12 @@ const NewItems = () => {
             </div>
           </div>
           <div className="col-lg-12">
-            <div style={{ padding: "0 5px" }}>
+            <div style={{ padding: "0" }}>
             {loading ? (
                 <Slider {...settings}>
                   {new Array(8).fill(0).map((_, index) => (
                     <div key={index}>
-                      <div className="nft__item" style={{ margin: "0 10px" }}>
+                      <div className="nft__item">
                         <div className="author_list_pp">
                           <div 
                             style={{ 
@@ -266,7 +266,7 @@ const NewItems = () => {
                     <div key={item.id}>
                       <div 
                         className="nft__item" 
-                        style={{ margin: "0 10px", cursor: "pointer" }}
+                        style={{ cursor: "pointer" }}
                         onClick={(e) => {
 
                           if (!e.target.closest('.author_list_pp') && 

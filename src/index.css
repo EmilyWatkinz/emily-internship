@@ -28,6 +28,13 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/* Desktop slider spacing */
+@media (min-width: 768px) {
+  .slick-slide > div {
+    padding: 0 10px;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -412,16 +419,21 @@ body {
   /* Fix slick slider on mobile */
   .slick-slider {
     margin: 0 !important;
-    padding: 0 !important;
   }
 
   .slick-list {
-    margin: 0 -10px !important;
+    margin: 0 !important;
     padding: 0 !important;
   }
 
   .slick-slide > div {
-    padding: 0 10px !important;
+    padding: 0 5px !important;
+  }
+
+  .slick-slide .nft__item,
+  .slick-slide .nft_coll {
+    width: 100% !important;
+    margin: 0 !important;
   }
 
   .slick-dots {
@@ -436,15 +448,29 @@ body {
   .nft__item,
   .nft_coll {
     margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .nft__item_wrap,
+  .nft_wrap {
+    width: 100% !important;
   }
 
   #section-items,
   #section-collections {
-    padding: 20px 0 !important;
+    padding: 20px 0 60px !important;
   }
 
   #section-items .col-lg-12 > div,
   #section-collections .col-lg-12 > div {
-    padding: 0 10px !important;
+    padding: 0 5px !important;
+    max-width: 100% !important;
+  }
+
+  /* Ensure container doesn't overflow */
+  #section-items .container,
+  #section-collections .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 }
