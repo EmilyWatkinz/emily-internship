@@ -11,6 +11,23 @@
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
 
+/* Mobile fixes */
+html {
+  overflow-x: hidden !important;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -348,5 +365,47 @@
   .nft-item-price img {
     width: 14px !important;
     height: 14px !important;
+  }
+}
+
+/* Additional mobile-specific improvements */
+@media (max-width: 767px) {
+  /* Prevent horizontal scrolling */
+  .container,
+  .container-fluid,
+  .row {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Fix image scaling */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Make sure sections fit properly */
+  section {
+    overflow-x: hidden !important;
+  }
+
+  /* Touch-friendly buttons */
+  .btn,
+  .btn-main,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+  }
+
+  /* Improve readability */
+  p,
+  .lead {
+    line-height: 1.6 !important;
+  }
+
+  /* Fix navbar on mobile */
+  header .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
