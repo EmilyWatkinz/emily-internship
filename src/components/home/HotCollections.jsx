@@ -145,8 +145,6 @@ const HotCollections = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: false,
-          variableWidth: false,
         }
       }
     ]

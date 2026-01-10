@@ -170,8 +170,6 @@ const NewItems = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           vertical: false,
-          centerMode: false,
-          variableWidth: false,
         }
       }
     ]
