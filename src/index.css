@@ -419,29 +419,50 @@ body {
   /* Fix slick slider on mobile */
   .slick-slider {
     margin: 0 !important;
+    width: 100% !important;
+    position: relative !important;
   }
 
   .slick-list {
     margin: 0 !important;
     padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .slick-slide {
+    padding: 0 !important;
   }
 
   .slick-slide > div {
-    padding: 0 5px !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .slick-slide .nft__item,
   .slick-slide .nft_coll {
     width: 100% !important;
     margin: 0 !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
   }
 
-  .slick-dots {
-    bottom: -40px !important;
+  /* Position arrows inside container on mobile */
+  .slick-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 10 !important;
   }
 
-  .slick-dots li button:before {
-    font-size: 10px !important;
+  .slick-prev {
+    left: 10px !important;
+  }
+
+  .slick-next {
+    right: 10px !important;
+  }
+
+  .slick-arrow i {
+    font-size: 14px !important;
   }
 
   /* Fix NFT items on mobile */
@@ -461,16 +482,23 @@ body {
     padding: 20px 0 60px !important;
   }
 
+  #section-items .col-lg-12,
+  #section-collections .col-lg-12 {
+    padding: 0 !important;
+  }
+
   #section-items .col-lg-12 > div,
   #section-collections .col-lg-12 > div {
-    padding: 0 5px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     max-width: 100% !important;
   }
 
   /* Ensure container doesn't overflow */
   #section-items .container,
   #section-collections .container {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: 100% !important;
   }
 }
