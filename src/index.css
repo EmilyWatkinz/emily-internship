@@ -418,7 +418,7 @@ body {
 
   /* Fix slick slider on mobile */
   .slick-slider {
-    margin: 0 !important;
+    margin: 0 auto !important;
     width: 100% !important;
     position: relative !important;
   }
@@ -441,12 +441,12 @@ body {
   .slick-slide .nft__item,
   .slick-slide .nft_coll {
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 15px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Position arrows inside container on mobile */
+  /* Position arrows over the slider on mobile */
   .slick-arrow {
     width: 40px !important;
     height: 40px !important;
@@ -454,11 +454,11 @@ body {
   }
 
   .slick-prev {
-    left: 10px !important;
+    left: 5px !important;
   }
 
   .slick-next {
-    right: 10px !important;
+    right: 5px !important;
   }
 
   .slick-arrow i {
@@ -468,7 +468,7 @@ body {
   /* Fix NFT items on mobile */
   .nft__item,
   .nft_coll {
-    margin: 0 !important;
+    margin: 0 auto !important;
     max-width: 100% !important;
   }
 
@@ -479,12 +479,12 @@ body {
 
   #section-items,
   #section-collections {
-    padding: 20px 0 60px !important;
+    padding: 20px 0 40px !important;
   }
 
   #section-items .col-lg-12,
   #section-collections .col-lg-12 {
-    padding: 0 !important;
+    padding: 0 15px !important;
   }
 
   #section-items .col-lg-12 > div,
