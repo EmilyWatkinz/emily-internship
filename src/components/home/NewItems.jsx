@@ -170,6 +170,8 @@ const NewItems = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           vertical: false,
+          arrows: false,
+          dots: true,
         }
       }
     ]
@@ -186,8 +188,8 @@ const NewItems = () => {
             </div>
           </div>
           <div className="col-lg-12">
+            <div style={{ padding: "0 5px" }}>
             {loading ? (
-              <div style={{ padding: "0 40px" }}>
                 <Slider {...settings}>
                   {new Array(8).fill(0).map((_, index) => (
                     <div key={index}>
@@ -258,9 +260,7 @@ const NewItems = () => {
                     </div>
                   ))}
                 </Slider>
-              </div>
             ) : items.length > 0 ? (
-              <div style={{ padding: "0 40px" }}>
                 <Slider {...settings}>
                   {items.map((item) => (
                     <div key={item.id}>
@@ -331,12 +331,12 @@ const NewItems = () => {
                     </div>
                   ))}
                 </Slider>
-              </div>
             ) : (
               <div style={{ textAlign: "center", padding: "40px" }}>
                 <p>No items available</p>
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>

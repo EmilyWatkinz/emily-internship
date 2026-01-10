@@ -145,6 +145,8 @@ const HotCollections = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
+          dots: true,
         }
       }
     ]
@@ -161,6 +163,7 @@ const HotCollections = () => {
             </div>
           </div>
           <div className="col-lg-12">
+            <div style={{ padding: "0 5px" }}>
             {loading ? (
               <Slider {...settings}>
                 {new Array(6).fill(0).map((_, index) => (
@@ -250,6 +253,7 @@ const HotCollections = () => {
                 </Slider>
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>

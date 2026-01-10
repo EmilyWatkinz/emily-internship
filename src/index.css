@@ -408,4 +408,43 @@ body {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+
+  /* Fix slick slider on mobile */
+  .slick-slider {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .slick-list {
+    margin: 0 -10px !important;
+    padding: 0 !important;
+  }
+
+  .slick-slide > div {
+    padding: 0 10px !important;
+  }
+
+  .slick-dots {
+    bottom: -40px !important;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px !important;
+  }
+
+  /* Fix NFT items on mobile */
+  .nft__item,
+  .nft_coll {
+    margin: 0 !important;
+  }
+
+  #section-items,
+  #section-collections {
+    padding: 20px 0 !important;
+  }
+
+  #section-items .col-lg-12 > div,
+  #section-collections .col-lg-12 > div {
+    padding: 0 10px !important;
+  }
 }
